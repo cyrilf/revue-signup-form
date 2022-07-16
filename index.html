@@ -10,7 +10,7 @@
     :root {
       --primary: #8BB76B;
       --primary-hover: #729757;
-      --grey: #6f7379;
+      --grey: rgb(55 65 81/.5);
       --border-radius: .5rem;
     }
 
@@ -28,14 +28,23 @@
     }
 
     .subscribe-email form {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
       width: 100%;
     }
 
-    .subscribe-email .revue-form-group {
+    .subscribe-email .fields {
+      display: flex;
       flex: 1;
+    }
+
+    .subscribe-email .fields .input-group {
+      flex: 1;
+    }
+
+    .subscribe-email .fields .input-group label {
+      display: block;
+      margin-left: 1rem;
+      margin-bottom: .25rem;
+      color: rgb(55 65 81/.8);
     }
 
     .subscribe-email input[type="text"],
@@ -56,6 +65,11 @@
       outline-offset: -2px;
     }
 
+    .subscribe-email input[type="text"]::placeholder,
+    .subscribe-email input[type="email"]::placeholder {
+      color: rgb(55 65 81/.4)
+    }
+
     .subscribe-email input[type="email"] {
       border-left: 0;
       border-radius: 0 var(--border-radius) var(--border-radius) 0;
@@ -70,7 +84,9 @@
       font-size: .875rem;
       font-weight: 600;
       line-height: 1.25rem;
-      margin-left: 1.25rem;
+      margin-top: 1.25rem;
+      width: 100%;
+      align-self: flex-end;
       padding: .75rem 1rem;
     }
 
@@ -95,6 +111,19 @@
       color: var(--grey);
       outline: 2px solid var(--primary);
     }
+
+    @media (min-width: 450px) {
+      .subscribe-email form {
+        display: flex;
+        justify-content: center;
+      }
+
+      .subscribe-email input[type="submit"] {
+        margin-top: 0;
+        margin-left: 1.25rem;
+        max-width: 150px;
+      }
+    }
   </style>
 </head>
 
@@ -102,19 +131,17 @@
   <div class="subscribe-email" id="revue-embed">
     <form action="https://newsletter.racines.page/add_subscriber" method="post" id="revue-form" name="revue-form"
       target="_blank">
-      <div class="revue-form-group">
-        <!-- <label for="member_first_name">Prénom <span class="optional">(Optionnel)</span></label> -->
-        <input class="revue-form-field" placeholder="Prénom (Optionnel)" type="text" name="member[first_name]"
-          id="member_first_name">
+      <div class="fields">
+        <div class="input-group">
+          <label for="form_name">Prénom</label>
+          <input class="revue-form-field" placeholder="Abitbol" type="text" name="name" id="form_name">
+        </div>
+        <div class="input-group">
+          <label for="form_email">Mail</label>
+          <input class="revue-form-field" placeholder="bonjour@racines.page" type="email" name="email" id="form_email">
+        </div>
       </div>
-      <div class="revue-form-group">
-        <!--<label for="member_email">Adresse mail</label>-->
-        <input class="revue-form-field" placeholder="Ton adresse mail" type="email" name="member[email]"
-          id="member_email">
-      </div>
-      <div class="revue-form-actions">
-        <input type="submit" value="Je m'abonne" name="member[subscribe]" id="member_submit">
-      </div>
+      <input type="submit" value="Je m'abonne" name="subscribe">
     </form>
     <div class="revue-form-footer">En t'abonnant, tu acceptes les <a target="_blank"
         href="http://www.getrevue.co/terms?locale=fr">Conditions d'utilisation</a> et la <a target="_blank"
