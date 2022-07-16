@@ -16,13 +16,13 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
     }
 
     .subscribe-email {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      max-width: 600px;
+      max-width: 650px;
       margin: 2rem auto;
       font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     }
@@ -44,7 +44,9 @@
       display: block;
       margin-left: 1rem;
       margin-bottom: .25rem;
-      color: rgb(55 65 81/.8);
+      color: rgb(55, 53, 47);
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     .subscribe-email input[type="text"],
@@ -67,7 +69,7 @@
 
     .subscribe-email input[type="text"]::placeholder,
     .subscribe-email input[type="email"]::placeholder {
-      color: rgb(55 65 81/.4)
+      color: rgb(55 65 81/.5)
     }
 
     .subscribe-email input[type="email"] {
