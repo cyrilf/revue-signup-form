@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revue Signup Form</title>
+  <style>
+    :root {
+      --primary: #8BB76B;
+      --primary-hover: #729757;
+      --grey: rgb(55 65 81/.5);
+      --border-radius: .5rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+
+    .subscribe-email {
+      display: flex;
+      flex-direction: column;
+      max-width: 650px;
+      margin: 2rem auto;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .subscribe-email form {
+      width: 100%;
+    }
+
+    .subscribe-email .fields {
+      display: flex;
+      flex: 1;
+    }
+
+    .subscribe-email .fields .input-group {
+      flex: 1;
+    }
+
+    .subscribe-email .fields .input-group label {
+      display: block;
+      margin-left: 1rem;
+      margin-bottom: .25rem;
+      color: rgb(55, 53, 47);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .subscribe-email input[type="text"],
+    .subscribe-email input[type="email"] {
+      border: 1px solid rgb(55 65 81/.3);
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+      display: block;
+      font-size: .875rem;
+      line-height: 1.25rem;
+      margin: 0;
+      padding: .75rem 1rem;
+      width: 100%;
+    }
+
+    .subscribe-email input[type="text"]:focus,
+    .subscribe-email input[type="email"]:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: -2px;
+    }
+
+    .subscribe-email input[type="text"]::placeholder,
+    .subscribe-email input[type="email"]::placeholder {
+      color: rgb(55 65 81/.5)
+    }
+
+    .subscribe-email input[type="email"] {
+      border-left: 0;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    .subscribe-email input[type="submit"] {
+      background-color: var(--primary);
+      border: 0 solid #e5e7eb;
+      border-radius: var(--border-radius);
+      color: white;
+      cursor: pointer;
+      font-size: .875rem;
+      font-weight: 600;
+      line-height: 1.25rem;
+      margin-top: 1.25rem;
+      width: 100%;
+      align-self: flex-end;
+      padding: .75rem 1rem;
+    }
+
+    .subscribe-email input[type="submit"]:hover,
+    .subscribe-email input[type="submit"]:focus {
+      background-color: var(--primary-hover);
+      outline: 2px solid var(--primary-hover);
+    }
+
+    .subscribe-email .revue-form-footer {
+      color: var(--grey);
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .subscribe-email a {
+      color: var(--grey);
+    }
+
+    .subscribe-email a:focus {
+      color: var(--grey);
+      outline: 2px solid var(--primary);
+    }
+
+    @media (min-width: 450px) {
+      .subscribe-email form {
+        display: flex;
+        justify-content: center;
+      }
+
+      .subscribe-email input[type="submit"] {
+        margin-top: 0;
+        margin-left: 1.25rem;
+        max-width: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="subscribe-email" id="revue-embed">
+    <form action="https://newsletter.racines.page/add_subscriber" method="post" id="revue-form" name="revue-form"
+      target="_blank">
+      <div class="fields">
+        <div class="input-group">
+          <label for="member_first_name">Firstname</label>
+          <input class="revue-form-field" placeholder="Abitbol" type="text" name="member[first_name]"
+            id="member_first_name">
+        </div>
+        <div class="input-group">
+          <label for="member_email">Mail</label>
+          <input class="revue-form-field" placeholder="bonjour@racines.page" type="email" name="member[email]"
+            id="member_email">
+        </div>
+      </div>
+      <input type="submit" value="I subscribe" name="member[subscribe]" id="member_submit">
+    </form>
+    <div class="revue-form-footer">By subscribing, you agree with Revue's <a target="_blank"
+        href="http://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank"
+        href="http://www.getrevue.co/privacy">Privacy Policy</a>.</div>
+  </div>
+</body>
+
+</html>
