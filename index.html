@@ -135,15 +135,17 @@
       target="_blank">
       <div class="fields">
         <div class="input-group">
-          <label for="form_name">Prénom</label>
-          <input class="revue-form-field" placeholder="Abitbol" type="text" name="name" id="form_name">
+          <label for="member_first_name">Prénom</label>
+          <input class="revue-form-field" placeholder="Abitbol" type="text" name="member[first_name]"
+            id="member_first_name">
         </div>
         <div class="input-group">
-          <label for="form_email">Mail</label>
-          <input class="revue-form-field" placeholder="bonjour@racines.page" type="email" name="email" id="form_email">
+          <label for="member_email">Mail</label>
+          <input class="revue-form-field" placeholder="bonjour@racines.page" type="email" name="member[email]"
+            id="member_email">
         </div>
       </div>
-      <input type="submit" value="Je m'abonne" name="subscribe">
+      <input type="submit" value="Je m'abonne" name="member[subscribe]" id="member_submit">
     </form>
     <div class="revue-form-footer">En t'abonnant, tu acceptes les <a target="_blank"
         href="http://www.getrevue.co/terms?locale=fr">Conditions d'utilisation</a> et la <a target="_blank"
